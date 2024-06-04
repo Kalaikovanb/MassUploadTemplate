@@ -1,0 +1,203 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:plugins="sap.m.plugins"
+    xmlns:columnmenu="sap.m.table.columnmenu"
+    xmlns:sap.ui.fl="sap.ui.fl"
+    xmlns:sap.ui.dt="sap.ui.dt"
+    xmlns:vm="sap.ui.fl.variants"
+    xmlns:dnd="sap.ui.core.dnd"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+>
+    <Table
+        id="table0"
+        items="{JSONModel1>/data}"
+        headerText="Current Entry"
+    >
+        <columns>
+            <Column id="colMaterial" >
+                <Text id="tblMaterial" text="Material" />
+            </Column>
+            <Column id="colDesc">
+                <Text id="tblDesc" text="Description" />
+            </Column>
+            <Column id="colMat">
+                <Text id="tblMat" text="Material Type" />
+            </Column>
+            <Column  id="colInd">
+                <Text id="tblInd" text="Industry Sector" />
+            </Column>
+            <Column id="colPlant">
+                <Text id="tblPlant" text="Plant" />
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem id='listColumn'>
+                <cells>
+                    <Text id='toolmaktx' text="{JSONModel1>matnr}" />
+                    <Text id='toolmatnr' text="{JSONModel1>maktx}" />
+                    <Text id='toolmtart' text="{JSONModel1>mtart}" />
+                    <Text id='toolmbrsh' text="{JSONModel1>mbrsh}" />
+                    <Text id='toolwerks' text="{JSONModel1>werks}" />
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+    <Table
+        id="persoTable"
+        items="{JSONModel>/data}"
+        ariaLabelledBy="title"
+        fixedLayout="Strict"
+        autoPopinMode="true"
+        growing="true"
+        sticky="ColumnHeaders,HeaderToolbar"
+        popinLayout="GridSmall"
+    >
+        <headerToolbar>
+            <OverflowToolbar id='overFlowToolbar'>
+                <Title
+                    id="title"
+                    text="Potential Duplicates"
+                />
+                <ToolbarSeparator id='toolSeparator'/>
+                <ToolbarSpacer id='toolSpacer' />
+                <Button id='btnDialog'
+                    icon="sap-icon://action-settings"
+                    press="openPersoDialog"
+                    tooltip="Settings"
+                />
+            </OverflowToolbar>
+        </headerToolbar>
+
+        <dependents>
+            <columnmenu:Menu id="menu">
+                <columnmenu:items>
+                    <columnmenu:ActionItem id='colActionItem'
+                        icon="sap-icon://table-column"
+                        label="Columns"
+                    />
+                </columnmenu:items>
+            </columnmenu:Menu>
+        </dependents>
+
+        <noData>
+            <IllustratedMessage id='illusmessage'/>
+        </noData>
+
+        <columns>
+            <Column id="Material">
+                <customData>
+                    <core:CustomData
+                        key="p13nData"
+                        value='\{"columnKey": "{JSONModel>Matnr}","leadingProperty": "{JSONModel>Matnr}", "columnIndex": "0"}'
+                    />
+                </customData>
+                <Label
+                    id='matLabel'
+                    text="Material"
+                />
+            </Column>
+            <Column
+                id="Description"
+                headerMenu="menu"
+            >
+                <header>
+                    <Text
+                        id="descText"
+                        text="Description"
+                    />
+                </header>
+            </Column>
+            <Column
+                id="MaterialType"
+                headerMenu="menu"
+            >
+                <header>
+                    <Text
+                        id='matType'
+                        text="Material Type"
+                    />
+                </header>
+            </Column>
+            <Column
+                id="IndustrySector"
+                headerMenu="menu"
+            >
+                <header>
+                    <Text
+                        id='indSector'
+                        text="Industry Sector"
+                    />
+                </header>
+            </Column>
+            <Column
+                id="Plant"
+                headerMenu="menu"
+            >
+                <header>
+                    <Text
+                        id='plantText'
+                        text="Plant"
+                    />
+                </header>
+            </Column>
+            <Column
+                id="Score"
+                headerMenu="menu"
+            >
+                <header>
+                    <Text
+                        id='scoreText'
+                        text="Score"
+                    />
+                </header>
+            </Column>
+            <Column
+                id="Rule"
+                headerMenu="menu"
+            >
+                <header>
+                    <Text
+                        id='rule'
+                        text="Rule"
+                    />
+                </header>
+            </Column>
+        </columns>
+
+        <items>
+            <ColumnListItem id='clistItem'>
+                <cells>
+                    <Text
+                        id='matnr'
+                        text="{JSONModel>Matnr}"
+                    />
+                    <Text
+                        id='maktx'
+                        text="{JSONModel>Maktx}"
+                    />
+                    <Text
+                        id='mtart'
+                        text="{JSONModel>Mtart}"
+                    />
+                    <Text
+                        id='mbrsh'
+                        text="{JSONModel>Mbrsh}"
+                    />
+                    <Text
+                        id='werks'
+                        text="{JSONModel>Werks}"
+                    />
+                    <Text
+                        id='score'
+                        text="{JSONModel>Score}"
+                    />
+                    <Text
+                        id='ruleId'
+                        text="{JSONModel>RuleId}"
+                    />
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+</core:FragmentDefinition>

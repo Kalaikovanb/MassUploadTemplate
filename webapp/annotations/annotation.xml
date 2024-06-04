@@ -1,0 +1,57 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/sap/ZC_QUDG_MATERIALMASSUPLOAD_CDS/$metadata">
+        <edmx:Include Namespace="ZC_QUDG_MATERIALMASSUPLOAD_CDS" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+       
+            <Annotations Target="SAP.ZC_QUDG_MaterialMassUploadType">
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="matnr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="maktx"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="mtart"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="mbrsh"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="parent_reqid"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ernam"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ersda"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Delete Request"/>
+                            <PropertyValue Property="Action" String=""/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="bklas"/>
+                            <Annotation Term="UI.Hidden" Bool="true"/>
+                        </Record>
+                        <!-- <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Action" String="ZC_QUDG_MATERIALMASSUPLOAD_CDS.ZC_QUDG_MATERIALMASSUPLOAD_CDS_Entities/A8DB471512C6B76D81B2D196Delete_error_req"/>
+                            <PropertyValue Property="Criticality" Path="criticality"/>
+                            <PropertyValue Property="Determining" Bool="true"/>
+                            <PropertyValue Property="Label" String="Ignore Error"/>
+                        </Record> -->
+                    </Collection>
+                    <Annotation Term="UI.Criticality" Path="criticality"/>
+                </Annotation>
+            </Annotations>
+            
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
