@@ -15,30 +15,60 @@
         headerText="Current Entry"
     >
         <columns>
-            <Column id="colMaterial" >
-                <Text id="tblMaterial" text="Material" />
+            <Column id="colMaterial">
+                <Text
+                    id="tblMaterial"
+                    text="Material"
+                />
             </Column>
             <Column id="colDesc">
-                <Text id="tblDesc" text="Description" />
+                <Text
+                    id="tblDesc"
+                    text="Description"
+                />
             </Column>
             <Column id="colMat">
-                <Text id="tblMat" text="Material Type" />
+                <Text
+                    id="tblMat"
+                    text="Material Type"
+                />
             </Column>
-            <Column  id="colInd">
-                <Text id="tblInd" text="Industry Sector" />
+            <Column id="colInd">
+                <Text
+                    id="tblInd"
+                    text="Industry Sector"
+                />
             </Column>
             <Column id="colPlant">
-                <Text id="tblPlant" text="Plant" />
+                <Text
+                    id="tblPlant"
+                    text="Plant"
+                />
             </Column>
         </columns>
         <items>
             <ColumnListItem id='listColumn'>
                 <cells>
-                    <Text id='toolmaktx' text="{JSONModel1>matnr}" />
-                    <Text id='toolmatnr' text="{JSONModel1>maktx}" />
-                    <Text id='toolmtart' text="{JSONModel1>mtart}" />
-                    <Text id='toolmbrsh' text="{JSONModel1>mbrsh}" />
-                    <Text id='toolwerks' text="{JSONModel1>werks}" />
+                    <Text
+                        id='toolmaktx'
+                        text="{JSONModel1>matnr}"
+                    />
+                    <Text
+                        id='toolmatnr'
+                        text="{JSONModel1>maktx}"
+                    />
+                    <Text
+                        id='toolmtart'
+                        text="{JSONModel1>mtart}"
+                    />
+                    <Text
+                        id='toolmbrsh'
+                        text="{JSONModel1>mbrsh}"
+                    />
+                    <Text
+                        id='toolwerks'
+                        text="{JSONModel1>werks}"
+                    />
                 </cells>
             </ColumnListItem>
         </items>
@@ -59,9 +89,10 @@
                     id="title"
                     text="Potential Duplicates"
                 />
-                <ToolbarSeparator id='toolSeparator'/>
+                <ToolbarSeparator id='toolSeparator' />
                 <ToolbarSpacer id='toolSpacer' />
-                <Button id='btnDialog'
+                <Button
+                    id='btnDialog'
                     icon="sap-icon://action-settings"
                     press="openPersoDialog"
                     tooltip="Settings"
@@ -72,7 +103,8 @@
         <dependents>
             <columnmenu:Menu id="menu">
                 <columnmenu:items>
-                    <columnmenu:ActionItem id='colActionItem'
+                    <columnmenu:ActionItem
+                        id='colActionItem'
                         icon="sap-icon://table-column"
                         label="Columns"
                     />
@@ -81,7 +113,7 @@
         </dependents>
 
         <noData>
-            <IllustratedMessage id='illusmessage'/>
+            <IllustratedMessage id='illusmessage' />
         </noData>
 
         <columns>
@@ -200,4 +232,5 @@
             </ColumnListItem>
         </items>
     </Table>
+
 </core:FragmentDefinition>

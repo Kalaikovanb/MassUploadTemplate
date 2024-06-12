@@ -41,6 +41,7 @@
                 <Property Name="Create_mat_succ_req_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Delete_error_req_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Duplicate_check_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Initiate_wf_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="abwkz_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="aenam_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="aeszn_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
@@ -330,7 +331,7 @@
                 <Property Name="zplp2_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="zplp3_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="parent_reqid" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase" sap:label="Request ID" sap:quickinfo="Material Request Id" sap:creatable="false" sap:updatable="false"/>
-                <Property Name="s_no" Type="Edm.Int16" Nullable="false" sap:field-control="s_no_fc" sap:label="INT2" sap:quickinfo="2 Byte Signed Integer"/>
+                <Property Name="s_no" Type="Edm.Int16" Nullable="false" sap:field-control="s_no_fc" sap:label="Item Number" sap:quickinfo="2 Byte Signed Integer"/>
                 <Property Name="matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:field-control="matnr_fc" sap:label="Material" sap:quickinfo="Material Number" sap:value-list="standard"/>
                 <Property Name="ersda" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:field-control="ersda_fc" sap:label="Created On"/>
                 <Property Name="created_at_time" Type="Edm.Time" Precision="0" sap:field-control="created_at_time_fc" sap:label="Created At Time" sap:quickinfo="Time of Creation"/>
@@ -1145,6 +1146,11 @@
                     <Parameter Name="s_no" Type="Edm.Int16" Mode="In"/>
                     <Parameter Name="matnr" Type="Edm.String" Mode="In" MaxLength="40"/>
                 </FunctionImport>
+                <FunctionImport Name="ZC_QUDG_MaterialMassUploadInitiate_wf" ReturnType="ZC_QUDG_MATERIALMASSUPLOAD_CDS.DummyFunctionImportResult" m:HttpMethod="POST" sap:action-for="ZC_QUDG_MATERIALMASSUPLOAD_CDS.ZC_QUDG_MaterialMassUploadType" sap:applicable-path="Initiate_wf_ac">
+                    <Parameter Name="parent_reqid" Type="Edm.String" Mode="In" MaxLength="20"/>
+                    <Parameter Name="s_no" Type="Edm.Int16" Mode="In"/>
+                    <Parameter Name="matnr" Type="Edm.String" Mode="In" MaxLength="40"/>
+                </FunctionImport>
             </EntityContainer>
             <Annotations Target="ZC_QUDG_MATERIALMASSUPLOAD_CDS.ZC_QUDG_MaterialMassUploadType/matnr" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.ValueList">
@@ -1602,6 +1608,7 @@
                                 <PropertyPath>Create_mat_succ_req_ac</PropertyPath>
                                 <PropertyPath>Delete_error_req_ac</PropertyPath>
                                 <PropertyPath>Duplicate_check_ac</PropertyPath>
+                                <PropertyPath>Initiate_wf_ac</PropertyPath>
                                 <PropertyPath>abwkz_fc</PropertyPath>
                                 <PropertyPath>aenam_fc</PropertyPath>
                                 <PropertyPath>aeszn_fc</PropertyPath>
@@ -2206,6 +2213,7 @@
                                 <PropertyPath>Create_mat_succ_req_ac</PropertyPath>
                                 <PropertyPath>Delete_error_req_ac</PropertyPath>
                                 <PropertyPath>Duplicate_check_ac</PropertyPath>
+                                <PropertyPath>Initiate_wf_ac</PropertyPath>
                                 <PropertyPath>abwkz_fc</PropertyPath>
                                 <PropertyPath>aenam_fc</PropertyPath>
                                 <PropertyPath>aeszn_fc</PropertyPath>

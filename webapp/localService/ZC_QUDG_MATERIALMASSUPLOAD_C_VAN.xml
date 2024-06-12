@@ -923,6 +923,9 @@
             <Annotations Target="ZC_QUDG_MATERIALMASSUPLOAD_CDS.ZC_QUDG_MaterialMassUploadType/Duplicate_check_ac">
                 <Annotation Term="UI.Hidden"/>
             </Annotations>
+            <Annotations Target="ZC_QUDG_MATERIALMASSUPLOAD_CDS.ZC_QUDG_MaterialMassUploadType/Initiate_wf_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
             <Annotations Target="ZC_QUDG_MATERIALMASSUPLOAD_CDS.ZC_QUDG_MaterialMassUploadType/abwkz_fc">
                 <Annotation Term="UI.Hidden"/>
             </Annotations>
@@ -1812,26 +1815,6 @@
                         <PropertyValue Property="Title" String="Request Type"/>
                     </Record>
                 </Annotation>
-                <Annotation Term="UI.HeaderFacets">
-                    <Collection>
-                        <Record Type="UI.ReferenceFacet">
-                            <PropertyValue Property="ID" String="MaterialHeader"/>
-                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#Material"/>
-                        </Record>
-                        <Record Type="UI.ReferenceFacet">
-                            <PropertyValue Property="ID" String="MaterialHeader2"/>
-                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#CreatedBy"/>
-                        </Record>
-                        <Record Type="UI.ReferenceFacet">
-                            <PropertyValue Property="ID" String="MaterialHeader3"/>
-                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#CreatedOn"/>
-                        </Record>
-                        <Record Type="UI.ReferenceFacet">
-                            <PropertyValue Property="ID" String="MaterialHeader4"/>
-                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#CreatedAt"/>
-                        </Record>
-                    </Collection>
-                </Annotation>
                 <Annotation Term="UI.Facets">
                     <Collection>
                         <Record Type="UI.CollectionFacet">
@@ -2137,14 +2120,14 @@
                             <PropertyValue Property="Facets">
                                 <Collection>
                                     <Record Type="UI.ReferenceFacet">
-                                        <PropertyValue Property="Label" String="General data -Accounting"/>
-                                        <PropertyValue Property="ID" String="GeneraldataAccounting"/>
-                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#GeneraldataAccountingQ"/>
-                                    </Record>
-                                    <Record Type="UI.ReferenceFacet">
                                         <PropertyValue Property="Label" String="Current Valuation"/>
                                         <PropertyValue Property="ID" String="CurrentValuationParent"/>
                                         <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#CurrentValuationParentQ"/>
+                                    </Record>
+                                    <Record Type="UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="General data -Accounting"/>
+                                        <PropertyValue Property="ID" String="GeneraldataAccounting"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#GeneraldataAccountingQ"/>
                                     </Record>
                                 </Collection>
                             </PropertyValue>
@@ -2228,6 +2211,26 @@
                                 </Collection>
                             </PropertyValue>
                             <Annotation Term="UI.Hidden" Path="QHide"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderFacets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="ID" String="MaterialHeader"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#Material"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="ID" String="MaterialHeader2"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#CreatedBy"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="ID" String="MaterialHeader3"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#CreatedOn"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="ID" String="MaterialHeader4"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#CreatedAt"/>
                         </Record>
                     </Collection>
                 </Annotation>

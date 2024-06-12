@@ -34,8 +34,12 @@ server:
             metadataXmlPath: ./webapp/localService/metadata.xml
             mockdataRootPath: ./webapp/localService/data
           - urlPath: /sap/opu/odata/sap/ZC_QUDG_MATERIALMASSUPLOAD_CDS/
-            metadataPath: ./webapp/localService/metadata.xml
-            mockdataPath: ./webapp/localService/mockdata
+            generateMockData: true
+            metadataXmlPath: ./webapp/localService/metadata.xml
+            mockdataRootPath: ./webapp/localService/mockdata
+          - urlPath: /sap/opu/odata/sap/ZQU_DG_MATERIAL_MASS_UPLOAD_SRV/
+            metadataPath: ./webapp/localService/service/metadata.xml
+            mockdataPath: ./webapp/localService/service/mockdata
             generateMockData: true
         annotations:
           - localPath: ./webapp/localService/ZC_QUDG_MATERIALMASSUPLOAD_C_VAN.xml
