@@ -11,20 +11,28 @@ sap.ui.define(["sap/ui/core/mvc/ControllerExtension", "sap/m/MessageBox"], funct
 			 * @memberOf com.account.account.ext.controller.UpdateExt
 			 */
 			onAfterRendering:function(){
-				debugger
 				var url = window.location.href;
 				var urlObj = new URL(url);
 				var params = new URLSearchParams(urlObj.search);
 				var parentReqId = params.get('parent_reqid');
 				var oSmartFilterBar=this.base.getView().byId('listReportFilter');
-				var token=oSmartFilterBar.getAllFilterItems()[120].getControl();
+				var check=oSmartFilterBar.getAllFilterItems();
+				var	exactIndex;
+				check.forEach((data,index)=>{
+					if(data._oLabel.getText()==='Material Request Id'){
+						exactIndex=index;
+					}
+				})				
+				var token=oSmartFilterBar.getAllFilterItems()[exactIndex].getControl();
 				token.setEditable(false);
 				token.setTokens([
 					new sap.m.Token({
 						key: parentReqId,
 						text: parentReqId
 					})
-				])
+				])				
+				this.getView().byId('deleteEntry').setVisible(false)
+				this.getView().byId('addEntry').setVisible(false)
 				setTimeout(function() {
 					oSmartFilterBar.fireSearch();
 				}, 0);
